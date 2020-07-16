@@ -1,24 +1,29 @@
+
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Missing One
  */
 public class Student {
-    
-    String studentID,name;
-    int quizzesTaken,totalScore;
-    
-    public Student(){
-        
+
+    private String studentID;
+    private String name;
+    private int quizzesTaken;
+    private int totalScore;
+
+    public Student() {
+
     }
-    public Student(String studentID,String name){
-        this.studentID=studentID;
-        this.name=name;
+
+    public Student(String studentID, String name) {
+        this.studentID = studentID;
+        this.name = name;
     }
 
     public String getStudentID() {
@@ -41,23 +46,25 @@ public class Student {
         return quizzesTaken;
     }
 
-
     public int getTotalScore() {
         return totalScore;
     }
 
-    public void addQuiz(int score){
-        if (score>10) {
-            score = 10;
+    public void addQuiz(int score) {
+        Scanner scan = new Scanner(System.in);
+        while (score < 0 || score > 10) {
+            System.out.println("Invalid score!(Max 10)");
+            System.out.println("Enter score: ");
+            score = scan.nextInt();
         }
         totalScore += score;
         quizzesTaken++;
+
     }
-    
-    public double getAverageScore(){
-        double avg = totalScore/quizzesTaken;
+
+    public double getAverageScore() {
+        double avg = (double) totalScore / quizzesTaken;
         return avg;
     }
-    
- 
+
 }
