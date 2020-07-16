@@ -16,9 +16,10 @@ public class Student {
     private String name;
     private int quizzesTaken;
     private int totalScore;
+    private static double contribution;
 
     public Student() {
-
+        this("","");
     }
 
     public Student(String studentID, String name) {
@@ -67,4 +68,17 @@ public class Student {
         return avg;
     }
 
+    public static double getContribution() {
+        return contribution;
+    }
+
+    public static void setContribution(double contribution) {
+        Student.contribution = contribution;
+    }
+
+    
+
+ 
+
+    
 }

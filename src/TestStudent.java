@@ -16,9 +16,11 @@ public class TestStudent {
         s2.setName("Yolo");
         s2.setStudentID("456");
         
-        s1.addQuiz(3);
+        s1.addQuiz(9);
         s2.addQuiz(10);
         
-        System.out.printf("%-15s %-3d %-3d %.2f\n",s1.getName(),s1.getQuizzesTaken(),s1.getTotalScore(),s1.getAverageScore());
+        Student.setContribution(20);
+        
+        System.out.printf("%-15s %-3d %-3d %-5.2f %-5.2f\n",s1.getName(),s1.getQuizzesTaken(),s1.getTotalScore(),s1.getAverageScore(),s1.getAverageScore()/10*Student.getContribution());
     }
 }
